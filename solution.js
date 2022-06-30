@@ -1,6 +1,10 @@
 // You must RETURN your result in each function!
 
 function printNums(nums) {
+  nums.forEach((element) => {
+    console.log(nums)
+  })
+  return nums
   /**
    *  Using .forEach, add each number in the nums array to a new array.
    * @param nums => [1,2,3,4]
@@ -8,6 +12,11 @@ function printNums(nums) {
 }
 
 function returnSums(nums) {
+  const newNums = []
+  nums.forEach((element) => {
+    newNums.push(element + nums.indexOf(element))
+  })
+  return newNums
   /**
    * Using forEach, push the sum of n plus the index
    * to a new array and return the new array
@@ -16,6 +25,11 @@ function returnSums(nums) {
 }
 
 function returnTotal(objs) {
+  let sum = 0
+  objs.forEach((num) => {
+    sum += num.n
+  })
+  return sum
   /**
    * Using forEach return a number that is the total sum of all numbers in the array of objects.
    * The key for each object will be n
@@ -24,6 +38,11 @@ function returnTotal(objs) {
 }
 
 function printMoney(decimals) {
+  let sum = 0
+  objs.forEach((num) => {
+    sum += num.n
+  })
+  return sum
   /**
    * @param decimals => [2.30, 2.40, 32.99]
    * Using .map, return an array of decimals formatted as dollars.
@@ -36,6 +55,12 @@ function printMoney(decimals) {
 }
 
 function returnAllTrueValues(values) {
+  const realValues = values.filter((val) => {
+    if (val.happy === true) {
+      return val
+    }
+  })
+  return realValues
   /**
    * @param values => [{name: 'Joe', happy:false}]
    * Using .filter, return an array of objects where happy equals true
@@ -43,6 +68,14 @@ function returnAllTrueValues(values) {
 }
 
 function addTwo(nums) {
+  const addTwo = nums
+    .map((num) => {
+      return num + 2
+    })
+    .reduce((acc, val) => {
+      return acc + val
+    })
+  return addTwo
   /**
    * @param nums => [1,2,3,4]
    * Using .reduce, return the total sum of all numbers.
@@ -53,6 +86,10 @@ function addTwo(nums) {
 }
 
 function joinStrings(strings) {
+  const newStrings = strings.reduce((acc, val) => {
+    return acc + val
+  })
+  return newStrings
   /**
    * @param strings => ['g', 'f', 'z']
    * Using .reduce, return a new string containing each string from the strings array.
